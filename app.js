@@ -1,8 +1,16 @@
 var express = require('express');
+var saludo = ''
 app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World!\n');
+  saludo = process.env.SALUDO
+  if ( saludo ) {
+    res.send('${saludo}');
+  }
+  else {
+    res.send('Hello World!\n');
+  }
+  
 });
 
 app.listen(8080, function () {
