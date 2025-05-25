@@ -5,7 +5,7 @@ app = express();
 app.get('/', function (req, res) {
   saludo = process.env.SALUDO
   if ( saludo ) {
-    res.send('${saludo}');
+    res.send(`${saludo}`);
   }
   else {
     res.send('Hello World!\n');
